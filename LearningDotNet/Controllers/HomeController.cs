@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,9 +20,8 @@ namespace LearningDotNet.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult CreateEdit()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
