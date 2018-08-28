@@ -16,7 +16,7 @@ export class ToDoFormComponent {
     statuses: Array<{Id: number, Description: string}>;
 
     constructor(private http: HttpClient) {
-      this.http.get("/Home/GetStatuses").subscribe(
+        this.http.get("/CreateEditController/GetStatuses").subscribe(
           (data: Array<{ Id: number, Description: string }>) => {
               this.statuses = data;
               this.selectedStatus = this.statuses[0].Id;
@@ -32,6 +32,6 @@ export class ToDoFormComponent {
         console.log(this.selectedStatus);
         console.log(this.statuses[this.selectedStatus]);
         console.log(this.statuses[this.selectedStatus].Description);
-        this.http.post('/Home/CreateEdit', { task: { TaskName: this.task.value, Status: { Id: this.selectedStatus, Description: this.statuses[this.selectedStatus].Description } } }).subscribe();
+        this.http.post('/CreateEditController/CreateEdit', { Name: this.task.value, Id: this.selectedStatus } ).subscribe();
   }
 }

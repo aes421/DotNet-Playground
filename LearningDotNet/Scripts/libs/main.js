@@ -251,7 +251,7 @@ var ToDoFormComponent = /** @class */ (function () {
         this.http = http;
         this.task = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('');
         this.status = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('');
-        this.http.get("/Home/GetStatuses").subscribe(function (data) {
+        this.http.get("/CreateEditController/GetStatuses").subscribe(function (data) {
             _this.statuses = data;
             _this.selectedStatus = _this.statuses[0].Id;
         });
@@ -264,7 +264,7 @@ var ToDoFormComponent = /** @class */ (function () {
         console.log(this.selectedStatus);
         console.log(this.statuses[this.selectedStatus]);
         console.log(this.statuses[this.selectedStatus].Description);
-        this.http.post('/Home/CreateEdit', { task: { TaskName: this.task.value, Status: { Id: this.selectedStatus, Description: this.statuses[this.selectedStatus].Description } } }).subscribe();
+        this.http.post('/CreateEditController/CreateEdit', { Name: this.task.value, Id: this.selectedStatus }).subscribe();
     };
     ToDoFormComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
