@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { CreateService } from '../create.service';
 
 @Component({
   selector: 'app-to-do-form',
@@ -15,8 +15,8 @@ export class ToDoFormComponent {
     selectedStatus: number;
     statuses: Array<{Id: number, Description: string}>;
 
-    constructor(private http: HttpClient) {
-        this.http.get("/CreateEditController/GetStatuses").subscribe(
+    constructor(private createService : CreateService) {
+        this.createService.getStatuses().subscribe(
           (data: Array<{ Id: number, Description: string }>) => {
               this.statuses = data;
               this.selectedStatus = this.statuses[0].Id;
@@ -32,6 +32,6 @@ export class ToDoFormComponent {
         console.log(this.selectedStatus);
         console.log(this.statuses[this.selectedStatus]);
         console.log(this.statuses[this.selectedStatus].Description);
-        this.http.post('/CreateEditController/CreateEdit', { Name: this.task.value, Id: this.selectedStatus } ).subscribe();
+        this.createService.postTask(this.task.value, this.selectedStatus).subscribe();
   }
 }

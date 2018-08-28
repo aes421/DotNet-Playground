@@ -9,14 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { CreateService } from '../create.service';
 var ToDoFormComponent = /** @class */ (function () {
-    function ToDoFormComponent(http) {
+    function ToDoFormComponent(createService) {
         var _this = this;
-        this.http = http;
+        this.createService = createService;
         this.task = new FormControl('');
         this.status = new FormControl('');
-        this.http.get("/CreateEditController/GetStatuses").subscribe(function (data) {
+        this.createService.getStatuses().subscribe(function (data) {
             _this.statuses = data;
             _this.selectedStatus = _this.statuses[0].Id;
         });
@@ -29,7 +29,7 @@ var ToDoFormComponent = /** @class */ (function () {
         console.log(this.selectedStatus);
         console.log(this.statuses[this.selectedStatus]);
         console.log(this.statuses[this.selectedStatus].Description);
-        this.http.post('/CreateEditController/CreateEdit', { Name: this.task.value, Id: this.selectedStatus }).subscribe();
+        this.createService.postTask(this.task.value, this.selectedStatus).subscribe();
     };
     ToDoFormComponent = __decorate([
         Component({
@@ -37,7 +37,7 @@ var ToDoFormComponent = /** @class */ (function () {
             templateUrl: './to-do-form.component.html',
             styleUrls: ['./to-do-form.component.css']
         }),
-        __metadata("design:paramtypes", [HttpClient])
+        __metadata("design:paramtypes", [CreateService])
     ], ToDoFormComponent);
     return ToDoFormComponent;
 }());
