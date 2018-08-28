@@ -1,13 +1,16 @@
-using System;
-using System.Collections.Generic;
+using LearningDotNet.Models;
+using Newtonsoft.Json;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace LearningDotNet.Controllers
-{
-    public class HomeController : Controller
+namespace LearningDotNet.Controllers {
+  public class HomeController : Controller
     {
+        ApplicationDbContext _context;
+        public HomeController() {
+          _context = new ApplicationDbContext();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -22,8 +25,11 @@ namespace LearningDotNet.Controllers
 
         public ActionResult CreateEdit()
         {
-
             return View();
+        }
+
+        public string GetStatuses() {
+          return JsonConvert.SerializeObject(_context.Statuses.ToList());
         }
     }
 }

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ToDoFormComponent } from './to-do-form/to-do-form.component';
@@ -24,7 +25,8 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 BrowserModule,
-                ReactiveFormsModule
+                ReactiveFormsModule,
+                HttpClientModule
             ],
             providers: [],
             bootstrap: [AppComponent]

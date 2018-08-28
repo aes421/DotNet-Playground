@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-to-do-form',
@@ -8,6 +9,16 @@ import { FormControl } from '@angular/forms';
 })
 export class ToDoFormComponent {
 
-    task = new FormControl('');
-    status = new FormControl('');
+  task = new FormControl('');
+  status = new FormControl('');
+
+  constructor(private http: HttpClient) {
+  }
+
+  public onSave(): void {
+    this.http.get("/Home/GetStatuses").subscribe(
+      (data: string) => {
+        console.log(data);
+      });
+  }
 }

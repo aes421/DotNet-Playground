@@ -262,6 +262,12 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\hello-world\hello-world.component.css" />
+    <Content Include="src\app\hello-world\hello-world.component.html" />
+    <Content Include="src\app\to-do-form\to-do-form.component.css" />
+    <Content Include="src\app\to-do-form\to-do-form.component.html" />
+    <Content Include="src\app\to-do-list\to-do-list.component.css" />
+    <Content Include="src\app\to-do-list\to-do-list.component.html" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\karma.conf.js" />
@@ -332,6 +338,12 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\hello-world\hello-world.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\hello-world\hello-world.component.ts" />
+    <TypeScriptCompile Include="src\app\to-do-form\to-do-form.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\to-do-form\to-do-form.component.ts" />
+    <TypeScriptCompile Include="src\app\to-do-list\to-do-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\to-do-list\to-do-list.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
