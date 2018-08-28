@@ -1,6 +1,9 @@
-<label>
-  Task:
-  <input type="text" class="form-control" [formControl]="task" />
-</label>
+<label for="taskDescriptionInput">Task:</label>
+<input type="text" class="form-control" id="taskDescriptionInput" [formControl]="task" />
 <p>Value: {{ task.value }}</p>
+<label for="statusDropdown"> Status: </label>
+<select id="statusDropdown" class="form-control" (change)="selectStatus($event.target.value)">
+  <option *ngFor="let status of statuses" value="{{ status.Id }}"> {{ status.Description }} </option>
+</select>
 <button class="btn btn-primary" (click)="onSave()">Save</button>
+

@@ -94,10 +94,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _hello_world_hello_world_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hello-world/hello-world.component */ "./src/app/hello-world/hello-world.component.ts");
-/* harmony import */ var _to_do_form_to_do_form_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./to-do-form/to-do-form.component */ "./src/app/to-do-form/to-do-form.component.ts");
-/* harmony import */ var _to_do_list_to_do_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./to-do-list/to-do-list.component */ "./src/app/to-do-list/to-do-list.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _hello_world_hello_world_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./hello-world/hello-world.component */ "./src/app/hello-world/hello-world.component.ts");
+/* harmony import */ var _to_do_form_to_do_form_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./to-do-form/to-do-form.component */ "./src/app/to-do-form/to-do-form.component.ts");
+/* harmony import */ var _to_do_list_to_do_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./to-do-list/to-do-list.component */ "./src/app/to-do-list/to-do-list.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -111,23 +112,25 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _hello_world_hello_world_component__WEBPACK_IMPORTED_MODULE_4__["HelloWorldComponent"],
-                _to_do_form_to_do_form_component__WEBPACK_IMPORTED_MODULE_5__["ToDoFormComponent"],
-                _to_do_list_to_do_list_component__WEBPACK_IMPORTED_MODULE_6__["ToDoListComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _hello_world_hello_world_component__WEBPACK_IMPORTED_MODULE_5__["HelloWorldComponent"],
+                _to_do_form_to_do_form_component__WEBPACK_IMPORTED_MODULE_6__["ToDoFormComponent"],
+                _to_do_list_to_do_list_component__WEBPACK_IMPORTED_MODULE_7__["ToDoListComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -213,7 +216,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<label>\n  Task:\n  <input type=\"text\" class=\"form-control\" [formControl]=\"task\" />\n</label>\n<p>Value: {{ task.value }}</p>\n<button class=\"btn btn-primary\" (click)=\"onSave()\">Save</button>\n"
+module.exports = "<label for=\"taskDescriptionInput\">Task:</label>\r\n<input type=\"text\" class=\"form-control\" id=\"taskDescriptionInput\" [formControl]=\"task\" />\r\n<p>Value: {{ task.value }}</p>\r\n<label for=\"statusDropdown\"> Status: </label>\r\n<select id=\"statusDropdown\" class=\"form-control\" (change)=\"selectStatus($event.target.value)\">\r\n  <option *ngFor=\"let status of statuses\" value=\"{{ status.Id }}\"> {{ status.Description }} </option>\r\n</select>\r\n<button class=\"btn btn-primary\" (click)=\"onSave()\">Save</button>\r\n\r\n"
 
 /***/ }),
 
@@ -229,25 +232,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToDoFormComponent", function() { return ToDoFormComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var ToDoFormComponent = /** @class */ (function () {
-    function ToDoFormComponent() {
+    function ToDoFormComponent(http) {
+        var _this = this;
+        this.http = http;
         this.task = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('');
         this.status = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('');
+        this.http.get("/Home/GetStatuses").subscribe(function (data) {
+            _this.statuses = data;
+            _this.selectedStatus = _this.statuses[0].Id;
+        });
     }
+    ToDoFormComponent.prototype.selectStatus = function (value) {
+        console.log(value);
+        this.selectedStatus = value;
+    };
+    ToDoFormComponent.prototype.onSave = function () {
+        console.log(this.selectedStatus);
+        console.log(this.statuses[this.selectedStatus]);
+        console.log(this.statuses[this.selectedStatus].Description);
+        this.http.post('/Home/CreateEdit', { task: { TaskName: this.task.value, Status: { Id: this.selectedStatus, Description: this.statuses[this.selectedStatus].Description } } }).subscribe();
+    };
     ToDoFormComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-to-do-form',
             template: __webpack_require__(/*! ./to-do-form.component.html */ "./src/app/to-do-form/to-do-form.component.html"),
             styles: [__webpack_require__(/*! ./to-do-form.component.css */ "./src/app/to-do-form/to-do-form.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], ToDoFormComponent);
     return ToDoFormComponent;
 }());

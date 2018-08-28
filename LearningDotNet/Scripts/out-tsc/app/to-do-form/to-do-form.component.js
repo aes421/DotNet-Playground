@@ -12,14 +12,24 @@ import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 var ToDoFormComponent = /** @class */ (function () {
     function ToDoFormComponent(http) {
+        var _this = this;
         this.http = http;
         this.task = new FormControl('');
         this.status = new FormControl('');
-    }
-    ToDoFormComponent.prototype.onSave = function () {
         this.http.get("/Home/GetStatuses").subscribe(function (data) {
-            console.log(data);
+            _this.statuses = data;
+            _this.selectedStatus = _this.statuses[0].Id;
         });
+    }
+    ToDoFormComponent.prototype.selectStatus = function (value) {
+        console.log(value);
+        this.selectedStatus = value;
+    };
+    ToDoFormComponent.prototype.onSave = function () {
+        console.log(this.selectedStatus);
+        console.log(this.statuses[this.selectedStatus]);
+        console.log(this.statuses[this.selectedStatus].Description);
+        this.http.post('/Home/CreateEdit', { task: { TaskName: this.task.value, Status: { Id: this.selectedStatus, Description: this.statuses[this.selectedStatus].Description } } }).subscribe();
     };
     ToDoFormComponent = __decorate([
         Component({
