@@ -23,12 +23,12 @@ namespace LearningDotNet.Controllers
       return View();
     }
     [HttpPost]
-    public ActionResult CreateEdit(string Name, int Id)
+    public ActionResult CreateEdit(string Name, int StatusId)
     {
       UserTask task = new UserTask()
       {
         TaskName = Name,
-        Status = _context.Statuses.Where(x => x.Id == Id).FirstOrDefault()
+        Status = _context.Statuses.Where(x => x.Id == StatusId).FirstOrDefault()
       };
       
       _context.UserTasks.Add(task);

@@ -14,6 +14,6 @@ export class CreateService {
   }
 
   postTask(name: string, statusId: number): Observable<any> {
-    return this.http.post('/CreateEdit/CreateEdit', { Name: name, Id: statusId })
+    return this.http.post('/CreateEdit/CreateEdit', { Name: name, StatusId: statusId })
   }
 }
