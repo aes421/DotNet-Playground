@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201808272047207_PopulateStatuses.Designer.cs">
       <DependentUpon>201808272047207_PopulateStatuses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808282013125_Change properties to required.cs" />
+    <Compile Include="Migrations\201808282013125_Change properties to required.Designer.cs">
+      <DependentUpon>201808282013125_Change properties to required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -362,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808272047207_PopulateStatuses.resx">
       <DependentUpon>201808272047207_PopulateStatuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808282013125_Change properties to required.resx">
+      <DependentUpon>201808282013125_Change properties to required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
