@@ -17,7 +17,7 @@ var CreateService = /** @class */ (function () {
         return this.http.get("/CreateEdit/GetStatuses");
     };
     CreateService.prototype.postTask = function (name, statusId) {
-        return this.http.post('/CreateEdit/CreateEdit', { Name: name, Id: statusId });
+        return this.http.post('/CreateEdit/CreateEdit', { Name: name, StatusId: statusId });
     };
     CreateService = __decorate([
         Injectable({

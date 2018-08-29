@@ -262,7 +262,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<label for=\"taskDescriptionInput\">Task:</label>\r\n<input type=\"text\" class=\"form-control\" id=\"taskDescriptionInput\" [formControl]=\"task\" />\r\n<p>Value: {{ task.value }}</p>\r\n<label for=\"statusDropdown\"> Status: </label>\r\n<select id=\"statusDropdown\" class=\"form-control\" (change)=\"selectStatus($event.target.value)\">\r\n  <option *ngFor=\"let status of statuses\" value=\"{{ status.Id }}\"> {{ status.Description }} </option>\r\n</select>\r\n<button class=\"btn btn-primary\" (click)=\"onSave()\">Save</button>\r\n\r\n"
+module.exports = "<label for=\"taskDescriptionInput\">Task:</label>\r\n<input type=\"text\" class=\"form-control\" id=\"taskDescriptionInput\" [formControl]=\"task\" />\r\n<label for=\"statusDropdown\"> Status: </label>\r\n<select id=\"statusDropdown\" class=\"form-control\" (change)=\"selectStatus($event.target.value)\">\r\n  <option *ngFor=\"let status of statuses\" value=\"{{ status.Id }}\"> {{ status.Description }} </option>\r\n</select>\r\n<button class=\"btn btn-primary\" (click)=\"onSave()\">Save</button>\r\n\r\n"
 
 /***/ }),
 
