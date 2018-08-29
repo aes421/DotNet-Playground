@@ -168,10 +168,10 @@ var CreateService = /** @class */ (function () {
         this.http = http;
     }
     CreateService.prototype.getStatuses = function () {
-        return this.http.get("/CreateEdit/GetStatuses");
+        return this.http.get("/Tasks/GetStatuses");
     };
     CreateService.prototype.postTask = function (name, statusId) {
-        return this.http.post('/CreateEdit/CreateEdit', { Name: name, StatusId: statusId });
+        return this.http.post('/Tasks/Create', { Name: name, StatusId: statusId });
     };
     CreateService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

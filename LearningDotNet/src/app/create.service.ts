@@ -10,10 +10,10 @@ export class CreateService {
   constructor(private http: HttpClient) { }
 
   getStatuses(): Observable<any> {
-    return this.http.get("/CreateEdit/GetStatuses");
+    return this.http.get("/Tasks/GetStatuses");
   }
 
   postTask(name: string, statusId: number): Observable<any> {
-    return this.http.post('/CreateEdit/CreateEdit', { Name: name, StatusId: statusId })
+    return this.http.post('/Tasks/Create', { Name: name, StatusId: statusId })
   }
 }

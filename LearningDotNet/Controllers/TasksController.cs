@@ -5,25 +5,26 @@ using System.Web.Mvc;
 
 namespace LearningDotNet.Controllers
 {
-  public class CreateEditController : Controller
+  public class TasksController : Controller
   {
     ApplicationDbContext _context;
-    public CreateEditController()
+    public TasksController()
     {
       _context = new ApplicationDbContext();
     }
 
     public ActionResult Index()
     {
-      return View();
+      return View("List");
     }
 
-    public ActionResult CreateEdit()
+    public ActionResult Create()
     {
       return View();
     }
+
     [HttpPost]
-    public ActionResult CreateEdit(string Name, int StatusId)
+    public ActionResult Create(string Name, int StatusId)
     {
       UserTask task = new UserTask()
       {
