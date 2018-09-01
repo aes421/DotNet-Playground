@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-to-do-form></app-to-do-form>\n\n"
+module.exports = "<app-to-do-form></app-to-do-form>\r\n\r\n"
 
 /***/ }),
 
