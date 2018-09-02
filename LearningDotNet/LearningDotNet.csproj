@@ -325,6 +325,8 @@
     <Content Include="src\tslint.json" />
     <Content Include="Views\Tasks\Create.cshtml" />
     <Content Include="Views\Tasks\List.cshtml" />
+    <Content Include="Views\Tasks\Edit.cshtml" />
+    <Content Include="Views\Tasks\_CreateEditPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
