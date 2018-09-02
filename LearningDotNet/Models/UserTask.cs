@@ -9,6 +9,8 @@ namespace LearningDotNet.Models {
     public string TaskName { get; set; }
 
     [Required]
+    public int StatusId { get; set; }
+
     public Status Status { get; set; }
   }
   
