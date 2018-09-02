@@ -12,6 +12,12 @@ namespace LearningDotNet.Models {
     public int StatusId { get; set; }
 
     public Status Status { get; set; }
+
+    [Required]
+    [StringLength(128)]
+    public string UserId { get; set; }
+
+    public ApplicationUser User { get; set; }
   }
   
 

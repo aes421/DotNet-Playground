@@ -223,6 +223,10 @@
     <Compile Include="Migrations\201809020104475_Removed Foreign Key relationship and just added an Id Property for Status.Designer.cs">
       <DependentUpon>201809020104475_Removed Foreign Key relationship and just added an Id Property for Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809022213363_Add an assocation between the task and the user.cs" />
+    <Compile Include="Migrations\201809022213363_Add an assocation between the task and the user.Designer.cs">
+      <DependentUpon>201809022213363_Add an assocation between the task and the user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -379,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809020104475_Removed Foreign Key relationship and just added an Id Property for Status.resx">
       <DependentUpon>201809020104475_Removed Foreign Key relationship and just added an Id Property for Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809022213363_Add an assocation between the task and the user.resx">
+      <DependentUpon>201809022213363_Add an assocation between the task and the user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

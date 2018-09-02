@@ -1,5 +1,6 @@
 using LearningDotNet.Models;
 using LearningDotNet.ViewModels;
+using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -13,7 +14,8 @@ namespace LearningDotNet.Controllers {
     
     [HttpGet]
     public ActionResult Index() {
-      var tasks = _context.UserTasks.Include("Status").ToList();
+      var userId = User.Identity.GetUserId();
+      var tasks = _context.UserTasks.Include("Status").Where(t => t.UserId == userId).ToList();
       return View("List", tasks);
     }
 
@@ -30,7 +32,8 @@ namespace LearningDotNet.Controllers {
     public ActionResult Create(CreateTaskViewModel viewModel) {
       UserTask task = new UserTask() {
         TaskName = viewModel.TaskName,
-        StatusId = viewModel.Status
+        StatusId = viewModel.Status,
+        UserId = User.Identity.GetUserId()
       };
 
       _context.UserTasks.Add(task);
