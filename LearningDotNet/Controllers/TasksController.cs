@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web.Mvc;
 
 namespace LearningDotNet.Controllers {
+
+  [Authorize]
   public class TasksController : Controller {
     ApplicationDbContext _context;
     public TasksController() {
@@ -22,7 +24,7 @@ namespace LearningDotNet.Controllers {
     [HttpGet]
     public ActionResult Create() {
       var viewModel = new CreateTaskViewModel {
-        Statuses = GetStatuses()
+        Statuses = GetStatuses() 
       };
 
       return View(viewModel);
@@ -51,12 +53,30 @@ namespace LearningDotNet.Controllers {
       }
 
       var viewModel = new CreateTaskViewModel {
+        Id = task.Id,
         Statuses = GetStatuses(),
         TaskName = task.TaskName,
         Status = task.StatusId
       };
 
-      return View("Edit", viewModel);
+      return View(viewModel);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(CreateTaskViewModel viewModel) {
+      var userId = User.Identity.GetUserId();
+      var task = _context.UserTasks.SingleOrDefault(t => t.Id == viewModel.Id && t.UserId == userId);
+
+      if (task == null) {
+        return RedirectToAction("Index");
+      }
+
+      task.TaskName = viewModel.TaskName;
+      task.StatusId = viewModel.Status;
+
+      _context.SaveChanges();
+
+      return RedirectToAction("Index");
     }
 
     public IEnumerable<Status> GetStatuses() {
