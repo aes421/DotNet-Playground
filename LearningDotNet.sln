@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningDotNet", "LearningDotNet\LearningDotNet.csproj", "{45E596CD-0396-4B69-9AB2-41D6EFF804B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Send", "Send\Send.csproj", "{57C0FF7E-64A6-43F6-A221-311D83C03ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Receive", "Receive\Receive.csproj", "{FFFB7386-2A7E-4287-990A-D8906414A2E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{45E596CD-0396-4B69-9AB2-41D6EFF804B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45E596CD-0396-4B69-9AB2-41D6EFF804B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45E596CD-0396-4B69-9AB2-41D6EFF804B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C0FF7E-64A6-43F6-A221-311D83C03ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C0FF7E-64A6-43F6-A221-311D83C03ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C0FF7E-64A6-43F6-A221-311D83C03ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C0FF7E-64A6-43F6-A221-311D83C03ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFFB7386-2A7E-4287-990A-D8906414A2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFB7386-2A7E-4287-990A-D8906414A2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFB7386-2A7E-4287-990A-D8906414A2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFB7386-2A7E-4287-990A-D8906414A2E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
